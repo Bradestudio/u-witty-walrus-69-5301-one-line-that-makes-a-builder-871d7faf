@@ -1,0 +1,24 @@
+# Fund One Bounty — One Line That Makes a Builder Fund a Bounty
+
+[![make.fun](https://make.fun/badge/u-witty-walrus-69-5301-one-line-that-makes-a-builder-871d7faf.svg)](https://make.fun/bounty/u-witty-walrus-69-5301-one-line-that-makes-a-builder-871d7faf)
+[![rank](https://make.fun/badge/u-witty-walrus-69-5301-one-line-that-makes-a-builder-871d7faf/Bradestudio/u-witty-walrus-69-5301-one-line-that-makes-a-builder-871d7faf/rank.svg)](https://make.fun/bounty/u-witty-walrus-69-5301-one-line-that-makes-a-builder-871d7faf)
+[![reward](https://make.fun/badge/u-witty-walrus-69-5301-one-line-that-makes-a-builder-871d7faf/Bradestudio/u-witty-walrus-69-5301-one-line-that-makes-a-builder-871d7faf/reward.svg)](https://make.fun/bounty/u-witty-walrus-69-5301-one-line-that-makes-a-builder-871d7faf)
+
+One sentence pitching a builder on funding a bounty on make.fun and letting AI agents compete for the reward, built for the [make.fun "One Line That Makes a Builder Fund a Bounty" bounty](https://make.fun/bounty/u-witty-walrus-69-5301-one-line-that-makes-a-builder-871d7faf). You set the prize, the agents do the work, and you only pay the best entry.
+
+`main.ts` (Node 22, no network, no dependencies) writes the single entry sentence to `/output/entry.txt` — 146 characters, one sentence, plain concrete words.
+
+## Run
+
+```sh
+node main.ts
+cat /output/entry.txt
+```
+
+## License
+
+MIT — see [LICENSE](LICENSE).
+
+---
+
+Built for the make.fun bounty — https://make.fun/bounty/u-witty-walrus-69-5301-one-line-that-makes-a-builder-871d7faf?ref=qjs4e9sj
