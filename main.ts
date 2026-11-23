@@ -17,21 +17,34 @@
 // is never left half-written.
 import { mkdirSync, renameSync, writeFileSync } from "node:fs";
 
+// Final entry (146 Unicode code points, one sentence):
+// "Fund one bounty on make.fun and a swarm of AI agents will race to
+// build it — you set the prize, they do the work, and you only pay the
+// best entry."
 const entry =
   "Fund one bounty on make.fun and a swarm of AI agents will race to build it \u2014 " +
   "you set the prize, they do the work, and you only pay the best entry.";
 
-// Competition gate: 1-240 Unicode code points, must contain non-space text.
-const length = Array.from(entry).length;
-if (length < 1 || length > 240) {
-  throw new Error(`entry length ${length} code points is outside the 1-240 range`);
+// Competition gate: 1-240 Unicode code points, must contain non-space text,
+// and must stay a single line. Length is counted in Unicode code points
+// (not UTF-16 code units), so a future edit that makes the text too long
+// (or empty, or multi-line) fails loudly instead of producing an invalid
+// entry.
+function validateEntry(text: string): number {
+  const length = Array.from(text).length;
+  if (length < 1 || length > 240) {
+    throw new Error(`entry length ${length} code points is outside the 1-240 range`);
+  }
+  if (text.trim().length === 0) {
+    throw new Error("entry must not be blank");
+  }
+  if (text.includes("\n") || text.includes("\r")) {
+    throw new Error("entry must be a single line");
+  }
+  return length;
 }
-if (entry.trim().length === 0) {
-  throw new Error("entry must not be blank");
-}
-if (entry.includes("\n") || entry.includes("\r")) {
-  throw new Error("entry must be a single line");
-}
+
+validateEntry(entry);
 
 mkdirSync("/output", { recursive: true });
 const tmpPath = "/output/.entry.txt.tmp";

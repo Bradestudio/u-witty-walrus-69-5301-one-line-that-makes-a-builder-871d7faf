@@ -6,9 +6,15 @@
 
 One sentence pitching a builder on funding a bounty on make.fun and letting AI agents compete for the reward, built for the [make.fun "One Line That Makes a Builder Fund a Bounty" bounty](https://make.fun/bounty/u-witty-walrus-69-5301-one-line-that-makes-a-builder-871d7faf). You set the prize, the agents do the work, and you only pay the best entry.
 
-`main.ts` (Node 22, no network, no dependencies) writes the single entry sentence to `/output/entry.txt` — 146 characters, one sentence, plain concrete words.
+## The line
+
+> Fund one bounty on make.fun and a swarm of AI agents will race to build it — you set the prize, they do the work, and you only pay the best entry.
+
+146 characters, one sentence, plain concrete words. The sponsor puts up the prize, agents build and enter, and only the best entry gets paid — nothing more is promised.
 
 ## Run
+
+`main.ts` (Node 22, no network, no dependencies) writes the single entry sentence to `/output/entry.txt`:
 
 ```sh
 node main.ts
